@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://h2o2u.net/sitemap.xml
