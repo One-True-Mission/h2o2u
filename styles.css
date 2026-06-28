@@ -384,6 +384,9 @@ p { margin: 0 0 1rem; text-wrap: pretty; }
    SERVICES GRID
    ============================================================ */
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+/* Balanced column counts for non-3 item sets (no orphan last row) */
+.svc-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.svc-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 .svc-card {
   background: var(--card-2);
   border: 1px solid var(--line);
@@ -582,6 +585,7 @@ a[href*="otm-designs"]:hover { color: var(--accent-bright); border-color: var(--
   .car-track { --slide-w: 72%; --prev-x: -135%; --next-x: 35%; --track-h: 40.5%; }
   .intro-grid { gap: 36px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
+  .svc-grid.cols-4 { grid-template-columns: repeat(2, 1fr); } /* 4-up becomes 2x2 on tablet */
 }
 @media (max-width: 900px) {
   .nav-links { display: none; }
@@ -605,6 +609,7 @@ a[href*="otm-designs"]:hover { color: var(--accent-bright); border-color: var(--
   .hero { min-height: 78vh; }
   .car-track { --slide-w: 92%; --track-h: 51.75%; }
   .car-slide.is-prev, .car-slide.is-next { opacity: 0; }
+  .svc-grid.cols-2, .svc-grid.cols-4 { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
